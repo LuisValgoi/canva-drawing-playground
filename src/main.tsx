@@ -1,9 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
+
+import Header from "@/components/Header/Header";
+import WorkableArea from "@/components/WorkableArea/WorkableArea";
+
+import "./main.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <App />
+    <Header />
+    <WorkableArea />
   </React.StrictMode>
 );

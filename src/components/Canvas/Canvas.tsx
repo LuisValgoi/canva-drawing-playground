@@ -1,6 +1,6 @@
-import { LegacyRef, useEffect, useRef } from "react";
+import React, { LegacyRef, useEffect, useRef } from "react";
 
-function App() {
+const Canvas: React.FC = () => {
   // refs
   const isDrawing = useRef<boolean>(false);
   const canvasRef = useRef<HTMLCanvasElement | undefined>();
@@ -39,10 +39,10 @@ function App() {
   const setPixelDensity = (canvas: HTMLCanvasElement | undefined) => {
     if (!canvas) return;
 
-    canvas.width = window.innerWidth * 2;
-    canvas.height = window.innerHeight * 2;
-    canvas.style.width = `${window.innerWidth}px`;
-    canvas.style.height = `${window.innerHeight}px`;
+    canvas.width = 1000 * 2;
+    canvas.height = 487 * 2;
+    canvas.style.width = `${1000}px`;
+    canvas.style.height = `${487}px`;
   };
 
   const setPointerStyle = (
@@ -74,6 +74,6 @@ function App() {
       onMouseUp={finishDrawing}
     />
   );
-}
+};
 
-export default App;
+export default Canvas;
