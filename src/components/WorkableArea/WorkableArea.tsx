@@ -1,44 +1,20 @@
-import React, { CSSProperties } from "react";
+import React from "react";
 
 import Canvas from "@/components/Canvas/Canvas";
 import Aside from "@/components/Aside/Aside";
 
-const WorkableArea: React.FC = () => {
-  const styles: Record<"area" | "aside" | "canvas", CSSProperties> = {
-    area: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      gap: "1rem",
-      flexDirection: "row",
-      width: "1000px",
-      height: `487px`,
-      margin: "0 auto",
-      marginTop: "3rem",
-    },
-    canvas: {
-      position: "relative",
-      backgroundColor: "white",
-      borderRadius: "1rem",
-      flex: 10,
-      height: "100%",
-    },
-    aside: {
-      position: "relative",
-      flex: 2,
-      height: "100%",
-    },
-  };
+import * as S from "./styles";
 
+const WorkableArea: React.FC = () => {
   return (
-    <div style={styles.area}>
-      <main style={styles.canvas}>
+    <S.Area>
+      <S.CanvasArea>
         <Canvas />
-      </main>
-      <aside style={styles.aside}>
+      </S.CanvasArea>
+      <S.AsideArea>
         <Aside />
-      </aside>
-    </div>
+      </S.AsideArea>
+    </S.Area>
   );
 };
 
