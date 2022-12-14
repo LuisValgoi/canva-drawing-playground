@@ -1,20 +1,36 @@
 import styled from "@emotion/styled";
 
 const ButtonBase = styled.button`
-  border: 0;
   margin: 0 auto;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  gap: 1rem;
+  background-color: #fff;
 
   &:hover {
-    outline-style: solid;
+  outline-style: solid;
     outline-color: #d6e6ff;
     outline-offset: 0.15rem;
+    outline-width: 0.15rem;
   }
 
-  &:active {
+  &:focus-visible {
     outline-style: solid;
     outline-color: #4243d4;
     outline-offset: 0.15rem;
+    outline-width: 0.15rem;
+  }
+
+  &:active {
+    background-color: #f6faff;
+
+    outline-style: solid;
+    outline-color: #4243d4;
+    outline-offset: 0.15rem;
+    outline-width: 0.15rem;
   }
 `;
 
@@ -30,8 +46,9 @@ export const ButtonPrimary = styled(ButtonBase)`
   border-radius: 3rem;
   background: linear-gradient(136.2deg, #8a4ae3 8.43%, #4852b1 95.68%);
   padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
   color: white;
-  gap: 1rem;
+
+  &:active {
+    background: linear-gradient(136.2deg, #4852b1 8.43%, #8a4ae3 95.68%);
+  }
 `;

@@ -57,12 +57,14 @@ const ToolBox: React.FC = () => {
   const [selectedTool, setSelectedTool] = useState(SUPPORTED_TOOLS[0].key);
 
   return (
-    <S.ToolBoxArea $rows={SUPPORTED_TOOLS.length}>
+    <S.ToolBoxArea $rows={SUPPORTED_TOOLS.length / 2}>
       {SUPPORTED_TOOLS.map((tool) => (
         <S.ToolBoxItem
           key={tool.key}
           $selected={tool.key === selectedTool}
           onClick={() => setSelectedTool(tool.key)}
+          onKeyUp={(event) => event.key === ' ' && setSelectedTool(tool.key)}
+          tabIndex={0}
         >
           {tool.icon}
         </S.ToolBoxItem>

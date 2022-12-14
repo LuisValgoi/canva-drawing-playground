@@ -42,13 +42,15 @@ const ColorBox: React.FC = () => {
   const [selectedColor, setSelectedColor] = useState(SUPPORTED_COLORS[0].key);
 
   return (
-    <S.ColorArea $rows={SUPPORTED_COLORS.length}>
+    <S.ColorArea $rows={SUPPORTED_COLORS.length / 3}>
       {SUPPORTED_COLORS.map((color) => (
         <S.ColorItem
           key={color.key}
           $backgroundColor={color.key}
           $selected={color.key === selectedColor}
           onClick={() => setSelectedColor(color.key)}
+          onKeyUp={(event) => event.key === ' ' && setSelectedColor(color.key)}
+          tabIndex={0}
         />
       ))}
     </S.ColorArea>

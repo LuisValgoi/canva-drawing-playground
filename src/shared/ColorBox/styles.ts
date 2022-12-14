@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 export const ColorArea = styled.div<{ $rows: number }>`
   display: grid;
   grid-template-columns: auto auto auto;
-  grid-template-rows: ${(props) => `repeat(${props.$rows / 3}, auto)`};
+  grid-template-rows: ${(props) => `repeat(${props.$rows}, auto)`};
   background-color: white;
   border-radius: 1rem;
   place-items: center;
@@ -11,7 +11,7 @@ export const ColorArea = styled.div<{ $rows: number }>`
 `;
 
 export const ColorItem = styled.div<{
-  $backgroundColor?: string;
+  $backgroundColor: string;
   $selected: boolean;
 }>`
   display: flex;
@@ -26,26 +26,23 @@ export const ColorItem = styled.div<{
 
   height: 10px;
   width: 10px;
-  background-color: ${(props) => props.$backgroundColor ?? "blue"};
+  background-color: ${(props) => props.$backgroundColor};
   border: ${(props) =>
     props.$backgroundColor?.toLocaleUpperCase() === "#FFFFFF"
       ? "1px solid lightgray"
       : "none"};
 
-  outline-style: ${(props) => (props.$selected ? "solid" : "unset")};
-  outline-color: ${(props) => (props.$selected ? "#4243d4" : "unset")};
+  outline-color: ${(props) => (props.$selected ? "#4243d4" : "white")};
+  outline-width: 0.15rem;
   outline-offset: 0.15rem;
+  outline-style: solid;
 
   &:hover {
-    outline-style: ${(props) => (props.$selected ? "solid" : "solid")};
     outline-color: ${(props) => (props.$selected ? "#4243d4" : "#d6e6ff")};
-    outline-offset: 0.15rem;
   }
 
   &:active,
   &:focus {
-    outline-style: solid;
     outline-color: #4243d4;
-    outline-offset: 0.15rem;
   }
 `;

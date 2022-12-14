@@ -11,7 +11,7 @@ import * as S from "./styles";
 const Header: React.FC = () => {
   return (
     <S.Header>
-      <img alt="logo" src={logo} />
+      <S.Logo alt="logo" src={logo} tabIndex={0} />
       <S.ButtonArea>
         <ButtonDefault>
           <GrRevert />
