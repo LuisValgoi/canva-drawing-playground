@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { triggerByKeyboard } from "@/utils/handlers";
+
 import * as S from "./styles";
 
 const SUPPORTED_COLORS = [
@@ -49,7 +51,7 @@ const ColorBox: React.FC = () => {
           $backgroundColor={color.key}
           $selected={color.key === selectedColor}
           onClick={() => setSelectedColor(color.key)}
-          onKeyUp={(event) => event.key === ' ' && setSelectedColor(color.key)}
+          onKeyUp={(e) => triggerByKeyboard(e, () => setSelectedColor(color.key))}
           tabIndex={0}
         />
       ))}

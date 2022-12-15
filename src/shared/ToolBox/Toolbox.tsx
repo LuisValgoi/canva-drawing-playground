@@ -8,6 +8,8 @@ import { ImPencil } from "react-icons/im";
 import { IoIosBrush } from "react-icons/io";
 import { RiPaintFill } from "react-icons/ri";
 
+import { triggerByKeyboard } from "@/utils/handlers";
+
 import * as S from "./styles";
 
 const SUPPORTED_TOOLS = [
@@ -63,7 +65,7 @@ const ToolBox: React.FC = () => {
           key={tool.key}
           $selected={tool.key === selectedTool}
           onClick={() => setSelectedTool(tool.key)}
-          onKeyUp={(event) => event.key === ' ' && setSelectedTool(tool.key)}
+          onKeyUp={(e) => triggerByKeyboard(e, () => setSelectedTool(tool.key))}
           tabIndex={0}
         >
           {tool.icon}
