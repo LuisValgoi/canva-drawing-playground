@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { triggerByKeyboard } from "@/utils/handlers";
-import { useToolBox } from "@/shared/ToolBox/ToolBox.hooks";
-import * as S from "@/shared/ToolBox/ToolBox.styles";
+import { useToolBox } from "./ToolBox.hooks";
+import * as S from "./ToolBox.styles";
 
 const ToolBox: React.FC = () => {
   // prettier-ignore
