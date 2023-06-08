@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ButtonDefault, ButtonPrimary } from "@/shared/Button/Button";
+import { ButtonDefault, ButtonPrimary } from "../../shared/Button/Button";
 
 import { GrRevert } from "react-icons/gr";
 import { FiTrash2, FiDownload } from "react-icons/fi";
