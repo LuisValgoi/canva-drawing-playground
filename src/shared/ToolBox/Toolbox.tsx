@@ -1,6 +1,6 @@
 import React from "react";
 
-import { triggerByKeyboard } from "@/utils/handlers";
+import { triggerByKeyboard } from "../../utils/handlers";
 import { useToolBox } from "./ToolBox.hooks";
 import * as S from "./ToolBox.styles";
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { triggerByKeyboard } from "@/utils/handlers";
+import { triggerByKeyboard } from "../../utils/handlers";
 
 import * as S from "./styles";
 

@@ -4,7 +4,7 @@ import { ButtonDefault, ButtonPrimary } from "../../shared/Button/Button";
 
 import { GrRevert } from "react-icons/gr";
 import { FiTrash2, FiDownload } from "react-icons/fi";
-import logo from "@/assets/logo.svg";
+import logo from "../../assets/logo.svg";
 
 import * as S from "./styles";
 

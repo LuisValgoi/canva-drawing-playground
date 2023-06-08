@@ -1,7 +1,7 @@
 import React from "react";
 
-import Canvas from "@/components/Canvas/Canvas";
-import Aside from "@/components/Aside/Aside";
+import Canvas from "../../components/Canvas/Canvas";
+import Aside from "../../components/Aside/Aside";
 
 import * as S from "./styles";
 

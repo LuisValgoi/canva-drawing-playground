@@ -16,10 +16,6 @@
       "noEmit": true,
       "types": ["node"],
       "jsx": "react-jsx",
-      "baseUrl": ".",
-      "paths": {
-          "@/*": ["./src/*"]
-      }
   },
   "files": ["custom.d.ts"],
   "include": ["src"],
