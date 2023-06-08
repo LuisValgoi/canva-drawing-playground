@@ -1,6 +1,6 @@
 import React from "react";
 
-import ToolBox from "../../shared/ToolBox/ToolBox";
+import ToolBox from '../../shared/ToolBox/ToolBox';
 import ColorBox from "../../shared/ColorBox/ColorBox";
 
 import * as S from "./styles";

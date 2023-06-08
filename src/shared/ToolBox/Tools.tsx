@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { ILineWidthOption, ITool } from "./ToolBox.interfaces";
+import React from "react";
+import { ILineWidthOption, ITool } from "./interfaces";
 
 import { BiSquareRounded, BiCircle, BiStar, BiText } from "react-icons/bi";
 import { FiTriangle } from "react-icons/fi";
@@ -9,7 +9,7 @@ import { ImPencil } from "react-icons/im";
 import { IoIosBrush } from "react-icons/io";
 import { RiPaintFill } from "react-icons/ri";
 
-const lineWidthOptions: ILineWidthOption[] = [
+export const lineWidthOptions: ILineWidthOption[] = [
   {
     key: "thin",
     width: 2,
@@ -32,7 +32,7 @@ const lineWidthOptions: ILineWidthOption[] = [
   },
 ];
 
-const tools: ITool[] = [
+export const tools: ITool[] = [
   {
     ref: React.createRef<HTMLButtonElement>(),
     key: "rectangle",
@@ -102,27 +102,3 @@ const tools: ITool[] = [
     lineWidthSelected: 2,
   },
 ];
-
-export function useToolBox() {
-  const [selectedTool, setSelectedTool] = useState<undefined | ITool>(
-    undefined
-  );
-
-  const setSelectedLineWidth = (
-    selectedTool: ITool,
-    selectedLineWidth: number
-  ) => {
-    const newSelectedTool = {
-      ...selectedTool,
-      lineWidthSelected: selectedLineWidth,
-    };
-    setSelectedTool(newSelectedTool);
-  };
-
-  return {
-    tools,
-    selectedTool,
-    setSelectedTool,
-    setSelectedLineWidth,
-  };
-}

@@ -1,12 +1,12 @@
 import React from "react";
-
+import useToolBox from "./useToolBox";
+import { tools } from "./Tools";
+import * as S from "./styles";
 import { triggerByKeyboard } from "../../utils/handlers";
-import { useToolBox } from "./ToolBox.hooks";
-import * as S from "./ToolBox.styles";
 
 const ToolBox: React.FC = () => {
   // prettier-ignore
-  const { tools, selectedTool, setSelectedTool, setSelectedLineWidth } = useToolBox();
+  const { selectedTool, setSelectedTool, setSelectedLineWidth } = useToolBox();
 
   return (
     <S.ToolBoxArea $rows={tools.length / 2}>
@@ -22,16 +22,15 @@ const ToolBox: React.FC = () => {
               <React.Fragment />
             ) : (
               <S.TooltipContent>
-                {tool.lineWidthOptions?.map((option) => {
-                  return (
+                {tool.lineWidthOptions?.map((option) => (
                     <S.TooltipContentLineWidthOption
                       key={option.width}
                       $selected={option.width === tool.lineWidthSelected}
                       $width={option.width}
                       onClick={() => setSelectedLineWidth(tool, option.width)}
                     />
-                  );
-                })}
+                  )
+                )}
               </S.TooltipContent>
             )
           }
